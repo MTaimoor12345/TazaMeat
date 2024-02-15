@@ -18,7 +18,7 @@ class Studentcontroler {
             const currentDir = path.dirname(new URL(import.meta.url).pathname);
 
             // Construct the correct uploadPath
-            const uploadPath = path.join(currentDir, '..', 'uploads', fileName).replace(/\\/g, '');
+            const uploadPath = path.join(currentDir,  fileName).replace(/\\/g, '');
 
 
             // Move the image to a specific folder (e.g., 'uploads') on your server
