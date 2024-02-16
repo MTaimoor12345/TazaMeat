@@ -9,12 +9,16 @@
     background-color: #a9a9a947;
 }
 /* navbar */
+#img {
+       width: 100px;
+       height: 100px;
+}
 #navbar-color{
     background-color: white;
     box-shadow: 0px -11px 4px 10px black;
 }
 #logo {
-    font-size: 25px;
+    /* font-size: 25px; */
     color: black;
     text-shadow: 1px 1px 1px black;
 }
@@ -28,7 +32,7 @@
     margin-left: 100px;
 }
 .nav-link{
-    color: black;
+    color: black !important;
     font-size: 18px;
     font-weight: bold;
     margin-left: 10px;
@@ -36,7 +40,7 @@
 }
 .nav-link:hover{
     background-color: #0ea10e;
-    color: white;
+    color: white !important;
     border-radius: 5px;
 }
 #btn a{
