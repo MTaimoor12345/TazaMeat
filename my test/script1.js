@@ -1,5 +1,7 @@
-fetch('http://localhost:3000/test').then((data)=>{
+fetch('https://hilarious-fox-flip-flops.cyclic.app/test').then((data)=>{
   return data.json();
 }).then((data1)=>{
-console.log(data1)
+console.log(data1[2].name);
+document.getElementById('root').
+innerHTML=data1[2].name
 })
