@@ -3,6 +3,7 @@ import express from 'express';
 import connectdb from './db/connectdb.js';
 import {join} from "path"
 import web from "./routes/web.js";
+import test from "./routes/test.js";
 import web1 from "./routes/web1.js";
 import fileUpload from 'express-fileupload';
 
@@ -21,6 +22,7 @@ app.use("/",web1);
 app.use("/admin",express.static(join(process.cwd(),"public")));
 app.use("/admin/edit",express.static(join(process.cwd(),"public")));
 app.use("/admin", web);
+app.use("/test", test);
 
 
 app.set('view engine', 'ejs');
