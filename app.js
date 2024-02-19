@@ -6,6 +6,7 @@ import web from "./routes/web.js";
 import test from "./routes/test.js";
 import web1 from "./routes/web1.js";
 import fileUpload from 'express-fileupload';
+import cors from 'cors';
 
 
 
@@ -14,6 +15,10 @@ const port = process.env.PORT || '3000';
 const DATABASE_URL = process.env.DATABASE_URL || 'mongodb://localhost:27017';
 
 connectdb(DATABASE_URL);
+
+// Use cors middleware
+app.use(cors());
+
 
 app.use(express.urlencoded(({extended:false})));
 app.use(fileUpload());
