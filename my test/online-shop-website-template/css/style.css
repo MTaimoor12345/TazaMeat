@@ -9710,3 +9710,91 @@ a.text-dark:hover, a.text-dark:focus {
     transform: translateY(-15px);
   }
 }
+
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Anek Malayalam', sans-serif;
+}
+.main-content{
+  width: 100%;
+  height: 60vh;
+  background-color: #a9a9a947;
+}
+/* navbar */
+#img {
+     width: 100px;
+     height: 100px;
+}
+#navbar-color{
+  background-color: white;
+  box-shadow: 0px -11px 4px 10px black;
+}
+#logo {
+  /* font-size: 25px; */
+  color: black;
+  text-shadow: 1px 1px 1px black;
+}
+#logo img{
+  margin-bottom: 10px;
+}
+#logo span{
+  color: #0ea10e;
+}
+.navbar-nav{
+  margin-left: 100px;
+}
+.nav-link{
+  color: black !important;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 10px;
+  transition: 0.6s ease;
+}
+.nav-link:hover{
+  background-color: #0ea10e;
+  color: white !important;
+  border-radius: 5px;
+}
+#btn a{
+  text-decoration: none;
+}
+#btn button{
+  width: 120px;
+  height: 30px;
+  font-size: 16px;
+  color: #0ea10e;
+  border: 2px solid #0ea10e;
+  background: transparent;
+  border-radius: 5px;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+#btn button:hover{
+  background-color: #0ea10e;
+  color: white;
+}
+@media screen and (max-width:1000px){
+  .navbar-nav{
+      margin-left: 10px;
+  }
+}
+@media screen and (max-width:1338px){
+  #btn{
+      margin-right: 50px;
+      
+  }
+  #btn button{
+      width: 90px;
+      height: 25px;
+      font-size: 15px;
+  }
+  .nav-link{
+      font-size: 14px;
+  }
+
+}
+/* navbar */

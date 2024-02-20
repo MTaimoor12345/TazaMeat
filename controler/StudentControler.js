@@ -6,7 +6,7 @@ import path from 'path';
 class Studentcontroler {
     static createDoc = async (req, res) => {
         try {
-            const { name, age, fees } = req.body;
+            const { title,price } = req.body;
 
             // Assuming you have an 'img' field in your request containing the image file
             const imgFile = req.files.img;
@@ -29,9 +29,8 @@ class Studentcontroler {
 
             // Create a new document with the base64 image
             const doc = new studentModel({
-                name: name,
-                age: age,
-                fees: fees,
+                title: title,
+                price: price,
                 img: "data:image/jpeg;base64," + imgBase64,
             });
 
