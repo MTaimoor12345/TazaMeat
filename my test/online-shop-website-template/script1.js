@@ -30,7 +30,7 @@ console.log(err)
 
 
 
-fetch('https://hilarious-fox-flip-flops.cyclic.app/test1').then((data)=>{
+fetch('https://hilarious-fox-flip-flops.cyclic.app/test/1').then((data)=>{
   return data.json();
 }).then((compeletShow)=>{
 
@@ -59,7 +59,7 @@ console.log(err)
 
 
 
-fetch('https://hilarious-fox-flip-flops.cyclic.app/test2').then((data)=>{
+fetch('https://hilarious-fox-flip-flops.cyclic.app/test/2').then((data)=>{
   return data.json();
 }).then((compeletShow)=>{
 
@@ -91,7 +91,7 @@ console.log(err)
 
 
 
-fetch('https://hilarious-fox-flip-flops.cyclic.app/test3').then((data)=>{
+fetch('https://hilarious-fox-flip-flops.cyclic.app/test/3').then((data)=>{
   return data.json();
 }).then((compeletShow)=>{
 
