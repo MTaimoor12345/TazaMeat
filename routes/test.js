@@ -6,9 +6,9 @@ import test from "../controler/test.js";
 
 
 router.get('/',test.getAllDoc);
-// router.post('/',Studentcontroler.createDoc);
-// router.get('/edit/:id',Studentcontroler.editDoc);
-// router.post('/update/:id',Studentcontroler.updateDocById);
-// router.post('/delet/:id',Studentcontroler.deletDocById);
+router.get('/1',test.getAllDoc1);
+router.get('/2',test.getAllDoc2);
+router.get('/3',test.getAllDoc3);
+
 
 export default router
