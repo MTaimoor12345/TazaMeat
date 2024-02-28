@@ -72,10 +72,10 @@ class seafoodcontroler {
 
 
 
-    static getAllDoc =async (req,res)=>{
+    static tAllDoc =async (req,res)=>{
         try {
             const result = await seafoodModel.find();
-        res.render("seafood",{data: result})
+        res.render("seafood",{data3: result})
             
         } catch (error) {
             console.log(error)
@@ -85,7 +85,7 @@ class seafoodcontroler {
     static editDoc = async (req,res)=>{
       try {
         const result = await seafoodModel.findById(req.params.id);
-        res.render("edit",{data: result})
+        res.render("edit3",{data: result})
       } catch (error) {
         console.log(error)
       }

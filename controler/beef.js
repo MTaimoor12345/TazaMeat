@@ -72,10 +72,10 @@ class beefcontroler {
 
 
 
-    static getAllDoc =async (req,res)=>{
+    static AllDoc =async (req,res)=>{
         try {
             const result = await beefModel.find();
-        res.render("beef",{data: result})
+        res.render("beef",{data2: result})
             
         } catch (error) {
             console.log(error)
@@ -85,7 +85,7 @@ class beefcontroler {
     static editDoc = async (req,res)=>{
       try {
         const result = await beefModel.findById(req.params.id);
-        res.render("edit",{data: result})
+        res.render("edit2",{data: result})
       } catch (error) {
         console.log(error)
       }
