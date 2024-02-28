@@ -22,4 +22,4 @@ document.getElementById("dards").innerHTML=data1;
 
 }).catch((err)=>{
 console.log(err)
-})
+});
