@@ -7,6 +7,9 @@ import test from "./routes/test.js";
 import web1 from "./routes/web1.js";
 import fileUpload from 'express-fileupload';
 import cors from 'cors';
+import mutton from "./routes/mutton.js";
+import beef from "./routes/beef.js";
+import seafood from "./routes/seafood.js"
 
 
 
@@ -26,8 +29,14 @@ app.use(express.static(join(process.cwd(),"public")));
 app.use("/",web1);
 app.use("/admin",express.static(join(process.cwd(),"public")));
 app.use("/admin/edit",express.static(join(process.cwd(),"public")));
+app.use("/mutton/edit",express.static(join(process.cwd(),"public")));
+app.use("/beef/edit",express.static(join(process.cwd(),"public")));
+app.use("/seafood/edit",express.static(join(process.cwd(),"public")));
 app.use("/admin", web);
 app.use("/test", test);
+app.use("/mutton", mutton);
+app.use("/beef", beef);
+app.use("/seafood", seafood);
 
 
 app.set('view engine', 'ejs');

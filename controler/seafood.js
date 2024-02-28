@@ -1,9 +1,9 @@
 import express from "express";
-import studentModel from "../models/student.js";
+import seafoodModel from "../models/seafood.js";
 import fs from 'fs/promises';
 import path from 'path';
 
-class Studentcontroler {
+class seafoodcontroler {
     static createDoc = async (req, res) => {
         try {
             const { title,price } = req.body;
@@ -28,7 +28,7 @@ class Studentcontroler {
             const imgBase64 = await fs.readFile(uploadPath, { encoding: 'base64' });
 
             // Create a new document with the base64 image
-            const doc = new studentModel({
+            const doc = new seafoodModel({
                 title: title,
                 price: price,
                 img: "data:image/jpeg;base64," + imgBase64,
@@ -38,7 +38,7 @@ class Studentcontroler {
             const result = await doc.save();
 
             // Redirect or respond as needed
-            res.redirect('/admin');
+            res.redirect('/seafood');
             console.log(result);
         } catch (error) {
             console.log(error);
@@ -53,7 +53,7 @@ class Studentcontroler {
     // static createDoc =async(req,res)=>{
     //     try {
     //         const {name,age,fees}=req.body;
-    //         const doc =new studentModel({
+    //         const doc =new seafoodModel({
     //             name:name,
     //             age:age,
     //             fees:fees,
@@ -74,8 +74,8 @@ class Studentcontroler {
 
     static getAllDoc =async (req,res)=>{
         try {
-            const result = await studentModel.find();
-        res.render("index",{data: result})
+            const result = await seafoodModel.find();
+        res.render("seafood",{data: result})
             
         } catch (error) {
             console.log(error)
@@ -84,7 +84,7 @@ class Studentcontroler {
 
     static editDoc = async (req,res)=>{
       try {
-        const result = await studentModel.findById(req.params.id);
+        const result = await seafoodModel.findById(req.params.id);
         res.render("edit",{data: result})
       } catch (error) {
         console.log(error)
@@ -92,25 +92,25 @@ class Studentcontroler {
     }
     static updateDocById =async(req,res)=>{
         try {
-            const result = await studentModel.findByIdAndUpdate(req.params.id,req.body);
+            const result = await seafoodModel.findByIdAndUpdate(req.params.id,req.body);
             
 
         } catch (error) {
             console.log(error)
         }
-        res.redirect("/admin");
+        res.redirect("/seafood");
     }
     static deletDocById =async(req,res)=>{
         try {
-            const result = await studentModel.findByIdAndDelete(req.params.id);
+            const result = await seafoodModel.findByIdAndDelete(req.params.id);
             
 
         } catch (error) {
             console.log(error)
         }
-        res.redirect("/admin");
+        res.redirect("/seafood");
     }
 }
 
 
-export default Studentcontroler;
+export default seafoodcontroler;
