@@ -5,6 +5,7 @@ import {join} from "path"
 import web from "./routes/web.js";
 import test from "./routes/test.js";
 import web1 from "./routes/web1.js";
+import QA from "./routes/QA.js";
 import fileUpload from 'express-fileupload';
 import cors from 'cors';
 import mutton from "./routes/mutton.js";
@@ -33,11 +34,13 @@ app.use("/admin/edit",express.static(join(process.cwd(),"public")));
 app.use("/mutton/edit",express.static(join(process.cwd(),"public")));
 app.use("/beef/edit",express.static(join(process.cwd(),"public")));
 app.use("/seafood/edit",express.static(join(process.cwd(),"public")));
+app.use("/QA",express.static(join(process.cwd(),"public")));
 app.use("/admin", web);
 app.use("/test", test);
 app.use("/mutton", mutton);
 app.use("/beef", beef);
 app.use("/seafood", seafood);
+app.use("/QA", QA);
 
 
 app.set('view engine', 'ejs');
