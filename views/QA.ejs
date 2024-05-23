@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Book Qurbani</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-success justify-content-center">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-white text-lg"><b>Qurbani Booking</b></a>
+          </li>
+        
+        </ul>
+      </nav>
+
+
+
+      <div class="container" id="dishe" data-aos="fade-up"
+      data-aos-duration="1500">
+          <h1 class="text-center" id="chicken">Qurbani Animals</h1>
+          <div class="row flex-wrap" style="margin-top: 50px;" data-aos="fade-up"
+       data-aos-duration="3000">
+              <div class="col-md-3 py-3 py-md-0">
+                  <div class="card">
+                      <img src="./img/cow.png" alt="">
+                      <div class="card-body">
+                          <h3 class="text-center">Full COW</h3>
+                          <div class="star text-center">
+                            <i class="bx bxs-star checked"></i>
+                            <i class="bx bxs-star checked"></i>
+                            <i class="bx bxs-star checked"></i>
+                            <i class="bx bxs-star checked"></i>
+                            <i class="bx bxs-star checked"></i>
+                          </div>
+                          <h6> Day1 : RS 224,770<span></span></h6>
+                          <h6> Day2 : RS 221,445<span></span></h6>
+                      </div>
+                  </div>
+              </div>
+             
+              <div class="col-md-3 py-3 py-md-0">
+                  <div class="card">
+                      <img src="./img/1cow.png" alt="">
+                      <div class="card-body">
+                          <h3 class="text-center">COW 1 SHARE</h3>
+                          <div class="star text-center">
+                           <i class="bx bxs-star checked"></i>
+                           <i class="bx bxs-star checked"></i>
+                           <i class="bx bxs-star checked"></i>
+                           <i class="bx bxs-star checked"></i>
+                           <i class="bx bxs-star checked"></i>
+                          </div>
+                          <h6>Day1 : RS 33,800 <span><img src="./image/add.png" alt="" width="20px"></span></h6>
+                          <h6> Day2 : RS 33,300<span></span></h6>
+                          
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-3 py-3 py-md-0">
+                  <div class="card">
+                      <img src="./img/goat.png" alt="">
+                      <div class="card-body">
+                          <h3 class="text-center">GOAT</h3>
+                          <div class="star text-center">
+                           <i class="bx bxs-star checked"></i>
+                           <i class="bx bxs-star checked"></i>
+                           <i class="bx bxs-star checked"></i>
+                           <i class="bx bxs-star checked"></i>
+                           <i class="bx bxs-star checked"></i>
+                          </div>
+                          <h6>Day1 : RS 48,500 <span><img src="./image/add.png" alt="" width="20px"></span></h6>
+                          <h6> Day2 : RS 48,000<span></span></h6>
+                          
+                      </div>
+                  </div>
+              </div>
+           
+    
+    
+    
+          </div>
+
+          
+      </div>
+
+
+      <div class="container mt-5">
+        <form action="/QA" method="post">
+          <div class="row">
+            <div class="col">
+              <label for="Animal">Choose Animal Type:</label>
+               <select id="Animal" name="Animal" required onchange="updateQuantityInput(),calculatePrice(),cow() ">
+                <option value="Cow">Full Cow</option>
+                 <option value="CowShare">Cow Share</option>
+                  <option value="Goat">Goat</option>
+ 
+               </select>
+            </div>
+
+            <div class="col">
+              <label for="Days">Eid Days:</label>
+              <select id="Eid" name="Eid" required onchange="updateQuantityInput(),calculatePrice(),cow() ">
+                <option value="Day1">Day 1</option>
+                <option value="Day2">Day 2</option>
+                <!-- <option value="Day3">Day 3</option> -->
+               
+              </select>
+            </div>
+          
+          </div>
+          <div class="row mt-3">
+            <div class="col">
+              <input type="Number" name="CNIC" class="form-control" placeholder="CNIC Number" required>
+            </div>
+           
+          </div>
+
+          <div class="row mt-3">
+            <div class="col">
+              <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+            </div>
+            <div class="col">
+              <input type="text" name="fname" class="form-control" placeholder="Father Name" required>
+            </div>
+          </div>
+
+
+          <div class="row mt-3">
+            <div class="col">
+              <input type="Number" name="number" class="form-control" placeholder="Contact Number" required>
+            </div>
+            <div class="col">
+              <input type="text" name="Address" class="form-control" placeholder="Address" required>
+            </div>
+          </div>
+
+
+          <div class="row mt-3">
+            <div class="col">
+              <label for="">Qurbani Details Names & Shares:</label>
+              <div id="qurbaniDetailsInputs"></div> <!-- Dynamically populated inputs will go here -->
+            </div>
+            <div class="col">
+              <label for="">Quantity:</label>
+              <input type="Number" name="quantity" min="1" max="7" class="form-control" id="quantity" placeholder="Animal Quantity" required onchange="updateQuantityInput(),calculatePrice(),updateQuantityInput1()">
+            </div>
+          </div>
+          <label for="">Total Amount:</label>
+          <input type="number" name="totalPrice" readonly class="form-control" id="totalPrice">
+          <button type="submit" class="btn btn-success mt-3">Submit</button>
+
+        </form>
+
+
+      </div>
+
+
+      <script>
+
+
+window.onload= updateQuantityInput(),cow();
+
+
+
+
+function updateQuantityInput() {
+    var animal = document.getElementById("Animal").value;
+    var quantity = document.getElementById("quantity").value;
+    var qurbaniDetailsInputs = document.getElementById("qurbaniDetailsInputs");
+
+    // Clear previous inputs
+    qurbaniDetailsInputs.innerHTML = "";
+
+if (quantity > 7) {
+  alert("Type number between 1 to 7");
+} else {
+ 
+  
+  if (animal === "CowShare") {
+     
+     for (let i = 0; i < quantity; i++) {
+       
+     
+         qurbaniDetailsInputs.innerHTML += `
+             <input type="text" name="qpdetail${i + 1}" class="form-control" placeholder="Qurbani Name ${i + 1}" required>
+         `;
+     }
+     calculatePrice();
+ } else if(animal === "Goat") {
+     for (let i = 0; i < quantity; i++) {
+         qurbaniDetailsInputs.innerHTML += `
+             <input type="text" name="qpdetail${i + 1}" class="form-control" placeholder="Qurbani Name ${i + 1}" required>
+         `;
+     }
+     calculatePrice();
+ }
+
+
+}
+
+
+
+    
+    
+}
+
+
+
+function cow (){
+  let animal = document.getElementById("Animal").value;
+    let quantity = document.getElementById("quantity");
+    let y = +7;
+    let qurbaniDetailsInputs = document.getElementById("qurbaniDetailsInputs");
+    qurbaniDetailsInputs.innerHTML = "";
+
+if (animal == "Cow") {
+
+  quantity.value = 1; 
+  quantity.readOnly = true; 
+  for (let i = 0; i < y ; i++) {
+            qurbaniDetailsInputs.innerHTML += `
+                <input type="text" name="qpdetail${i + 1}" class="form-control" placeholder="Qurbani Name ${i + 1}" required>
+            `;
+        }
+  calculatePrice();
+  
+  
+}else if(animal !== "Cow"){
+  quantity.readOnly = false;
+  updateQuantityInput();
+  calculatePrice();
+}
+
+}
+
+
+
+
+
+
+function calculatePrice() {
+    var animal = document.getElementById("Animal").value;
+   var quantity =1
+   quantity = document.getElementById("quantity").value;
+   days = document.getElementById("Eid").value;
+    
+    let Cow = +224770;
+    let CowShare= +33800;
+    let Goat= +48500; 
+    let a = +3325;
+    let b = +500;
+    if (animal == "Cow" && days == "Day1") {
+    let totalPrice = Cow * quantity;
+    // let cal = a * quantity;
+    // let Total = totalPrice - cal;
+  
+    console.log(totalPrice);
+   
+    document.getElementById("totalPrice").value = totalPrice;
+   }
+  else if (animal == "Cow" && days == "Day2") {
+    let totalPrice = Cow * quantity;
+    let cal = a * quantity;
+    let Total = totalPrice - cal;
+    console.log(totalPrice);
+   
+    document.getElementById("totalPrice").value = Total;
+   }
+   else if(animal == "CowShare" && days == "Day1"){
+    let totalPrice = CowShare * quantity;
+    
+   
+    document.getElementById("totalPrice").value = totalPrice
+   }
+   else if(animal == "CowShare" && days == "Day2"){
+    let totalPrice = CowShare * quantity;
+    let cal = b * quantity;
+    let Total = totalPrice - cal;
+   
+    document.getElementById("totalPrice").value = Total
+   }
+
+   else if(animal == "Goat" && days == "Day1"){
+    let totalPrice = Goat * quantity;
+    
+   
+    document.getElementById("totalPrice").value = totalPrice
+   }
+   else if(animal == "Goat" && days == "Day2"){
+    let totalPrice = Goat * quantity;
+    let cal = b * quantity;
+    let Total = totalPrice - cal;
+   
+    document.getElementById("totalPrice").value = Total
+   }
+  
+   
+    
+  
+}
+
+</script>
+</body>
+</html>

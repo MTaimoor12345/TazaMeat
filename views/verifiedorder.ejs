@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Document</title>
+    <style>
+        /* Add custom styles for the search input fields */
+        .search-input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-success justify-content-center">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link text-white text-lg"><b>Order Booking List</b></a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Add search input fields -->
+    <div class="container mt-3">
+      <div class="d-flex">
+        <!-- <input type="text" id="animalSearch" class="form-control search-input col-2" placeholder="Search by Animal Type" >
+        <input type="text" id="animalSearch" class="form-control search-input col-2" placeholder="Search by Animal Type" > -->
+
+      </div>
+        <!-- Add more search fields as needed -->
+        <tr>
+          <th scope="col"><input type="text" id="animalSearch" class=" search-input " placeholder="Search by Animal Type" ></th>
+          <th scope="col"><input type="text" id="daySearch" class=" search-input " placeholder="Search by day" ></th>
+          <th scope="col"><input type="text" id="CNICSearch" class=" search-input " placeholder="Search by CNIC" ></th>
+          <th scope="col"><input type="text" id="nameSearch" class=" search-input " placeholder="Search by Full Name" ></th>
+          <th scope="col"><input type="text" id="fnameSearch" class=" search-input " placeholder="Search by Father Name" ></th>
+         
+      </tr>
+
+
+
+
+        <!-- Table to display data -->
+        <table class="table table-bordered table-striped">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Animal Type</th>
+                    <th scope="col">Days</th>
+                    <th scope="col">CNIC</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Father Name</th>
+                    <th scope="col">Number</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">QP Details</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total Amount</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delet</th>
+                   
+                </tr>
+            </thead>
+         
+
+
+
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // JavaScript for filtering table rows based on search input
+        document.addEventListener("DOMContentLoaded", function () {
+            const animalSearch = document.getElementById('animalSearch');
+            const tableBody = document.getElementById('tableBody');
+            const rows = tableBody.getElementsByTagName('tr');
+
+            animalSearch.addEventListener('input', function () {
+                const searchValue = animalSearch.value.toLowerCase();
+
+                for (let row of rows) {
+                    const animalType = row.cells[1].textContent.toLowerCase(); // Change index as per column order
+
+                    if (animalType.includes(searchValue)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                }
+            });
+        });
+
+
+
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const animalSearch = document.getElementById('daySearch');
+            const tableBody = document.getElementById('tableBody');
+            const rows = tableBody.getElementsByTagName('tr');
+
+            animalSearch.addEventListener('input', function () {
+                const searchValue = animalSearch.value.toLowerCase();
+
+                for (let row of rows) {
+                    const animalType = row.cells[2].textContent.toLowerCase(); // Change index as per column order
+
+                    if (animalType.includes(searchValue)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                }
+            });
+        });
+
+
+
+
+
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const animalSearch = document.getElementById('CNICSearch');
+            const tableBody = document.getElementById('tableBody');
+            const rows = tableBody.getElementsByTagName('tr');
+
+            animalSearch.addEventListener('input', function () {
+                const searchValue = animalSearch.value.toLowerCase();
+
+                for (let row of rows) {
+                    const animalType = row.cells[3].textContent.toLowerCase(); // Change index as per column order
+
+                    if (animalType.includes(searchValue)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                }
+            });
+        });
+
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const animalSearch = document.getElementById('nameSearch');
+            const tableBody = document.getElementById('tableBody');
+            const rows = tableBody.getElementsByTagName('tr');
+
+            animalSearch.addEventListener('input', function () {
+                const searchValue = animalSearch.value.toLowerCase();
+
+                for (let row of rows) {
+                    const animalType = row.cells[4].textContent.toLowerCase(); // Change index as per column order
+
+                    if (animalType.includes(searchValue)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                }
+            });
+        });
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const animalSearch = document.getElementById('fnameSearch');
+            const tableBody = document.getElementById('tableBody');
+            const rows = tableBody.getElementsByTagName('tr');
+
+            animalSearch.addEventListener('input', function () {
+                const searchValue = animalSearch.value.toLowerCase();
+
+                for (let row of rows) {
+                    const animalType = row.cells[5].textContent.toLowerCase(); // Change index as per column order
+
+                    if (animalType.includes(searchValue)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
